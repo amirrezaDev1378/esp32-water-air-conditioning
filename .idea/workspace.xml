@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5303fb39-c184-4501-b1b0-2e974cc3edea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Andriod App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Andriod App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Andriod App/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Andriod App/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Andriod App/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Andriod App/android/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Andriod App/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Andriod App/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Andriod App/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Andriod App/android/settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_K:/WaterAC" value="3FHMFw22dGOqXz1mO728TGdrJdo" />
+    </persistenceIdMap>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Andriod App" />
+  </component>
+  <component name="GitLabMergeRequestsSettings"><![CDATA[{
+  "editorReviewEnabled": false
+}]]></component>
+  <component name="GitlabMajeraCodeReviewSettings">
+    <option name="popularEmojiShortcuts">
+      <list />
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3FHMFw22dGOqXz1mO728TGdrJdo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "bun",
+    "last_opened_file_path": "K:/WaterAC/ESP",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "bun",
+    "prettierjs.PrettierConfiguration.Package": "K:\\WaterAC\\Andriod App\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "K:\\WaterAC\\Andriod App\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="K:\WaterAC\ESP" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="K:\WaterAC\Andriod App" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.25134.101" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5303fb39-c184-4501-b1b0-2e974cc3edea" name="Changes" comment="" />
+      <created>1781727444213</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1781727444213</updated>
+      <workItem from="1781727448290" duration="570000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
