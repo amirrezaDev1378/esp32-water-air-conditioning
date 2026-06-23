@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5303fb39-c184-4501-b1b0-2e974cc3edea" name="Changes" comment="Init : )">
-      <change afterPath="$PROJECT_DIR$/Client/components/Sections/TemperatureMonitor/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/stores/localStateStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/(tabs)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/app/(tabs)/explore.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/(tabs)/settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/(tabs)/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/app/modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/modal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Client/bun.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/hello-wave.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/parallax-scroll-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/parallax-scroll-view.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/themed-text.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/ui/themed-text.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/themed-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/ui/themed-view.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/ui/collapsible.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/ui/collapsible.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/components/Sections/ControlButtons/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/Sections/ControlButtons/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/components/Sections/Modes/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/Sections/Modes/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/components/Sections/TemperatureMonitor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/Sections/TemperatureMonitor/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/components/Sections/TemperatureSelector/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/Sections/TemperatureSelector/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/scripts/reset-project.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,20 +85,21 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "javascript.preferred.runtime.type.id": "bun",
-    "last_opened_file_path": "K:/WaterAC/ESP",
+    "last_opened_file_path": "K:/WaterAC/Client/components/Sections",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "bun",
     "npm.android.executor": "Run",
     "npm.start.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "K:\\WaterAC\\Andriod App\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "prettierjs.PrettierConfiguration.Package": "K:\\WaterAC\\Client\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "K:\\WaterAC\\Client\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="K:\WaterAC\Client\components\Sections" />
       <recent name="K:\WaterAC\ESP" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -146,7 +145,8 @@
       <workItem from="1781727448290" duration="661000" />
       <workItem from="1781728506191" duration="2578000" />
       <workItem from="1782223767636" duration="312000" />
-      <workItem from="1782224453042" duration="2821000" />
+      <workItem from="1782224453042" duration="3891000" />
+      <workItem from="1782247964728" duration="3542000" />
     </task>
     <task id="LOCAL-00001" summary="Init : )">
       <option name="closed" value="true" />
@@ -156,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782225009277</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Init : )">
+      <option name="closed" value="true" />
+      <created>1782247164661</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1782247164661</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
