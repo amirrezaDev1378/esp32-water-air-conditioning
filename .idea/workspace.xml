@@ -2,63 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5303fb39-c184-4501-b1b0-2e974cc3edea" name="Changes" comment="Init : )">
-      <change afterPath="$PROJECT_DIR$/ESP/main.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/components/Sections/TemperatureMonitor/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/.bundle/config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/.prettierrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/.watchmanconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/Gemfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/__tests__/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/debug.keystore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/java/com/testrnapp/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/java/com/testrnapp/MainApplication.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/drawable/rn_edit_text_material.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/gradle/gradle-daemon-jvm.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/android/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/bun.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/ios/.xcode.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/ios/Podfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/ios/TestRNApp.xcodeproj/project.pbxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/ios/TestRNApp.xcodeproj/xcshareddata/xcschemes/TestRNApp.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/ios/TestRNApp/AppDelegate.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/ios/TestRNApp/Images.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/ios/TestRNApp/Images.xcassets/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/ios/TestRNApp/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/ios/TestRNApp/LaunchScreen.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/ios/TestRNApp/PrivacyInfo.xcprivacy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/jest.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/metro.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andriod App/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/(tabs)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/app/(tabs)/explore.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/(tabs)/settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/app/modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Client/bun.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/components/hello-wave.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/components/parallax-scroll-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/parallax-scroll-view.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/components/themed-text.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/ui/themed-text.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/components/themed-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/ui/themed-view.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/components/ui/collapsible.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/ui/collapsible.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/scripts/reset-project.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,6 +70,9 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3FHMFw22dGOqXz1mO728TGdrJdo" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -143,6 +104,7 @@
       <recent name="K:\WaterAC\ESP" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="K:\WaterAC\Client\components\ui" />
       <recent name="K:\WaterAC\Andriod App" />
     </key>
   </component>
@@ -184,8 +146,17 @@
       <workItem from="1781727448290" duration="661000" />
       <workItem from="1781728506191" duration="2578000" />
       <workItem from="1782223767636" duration="312000" />
-      <workItem from="1782224453042" duration="542000" />
+      <workItem from="1782224453042" duration="2821000" />
     </task>
+    <task id="LOCAL-00001" summary="Init : )">
+      <option name="closed" value="true" />
+      <created>1782225009277</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1782225009277</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
