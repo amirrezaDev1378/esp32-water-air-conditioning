@@ -1,13 +1,21 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { Dimensions, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 // import { LineChart } from "react-native-gifted-charts";
 import { LineChart } from "react-native-chart-kit";
+import { useTemperatureHistory } from "@/hooks/useTemperatureHistory";
+
 export interface TemperatureMonitorProps {}
 
 const TemperatureMonitor: FC<TemperatureMonitorProps> = (props) => {
-
-    return (<SafeAreaView>
+  // const {} = useController();
+  const { history, refresh } = useTemperatureHistory();
+  console.log({ history });
+  useEffect(()=>{
+    refresh();
+  } , [])
+  return (
+    <SafeAreaView>
       <Text style={{ width: "100%", textAlign: "center" }}>
         Temperature Monitor
       </Text>

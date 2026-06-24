@@ -5,9 +5,11 @@ import Modes from "@/components/Sections/Modes";
 import ControlButtons from "@/components/Sections/ControlButtons";
 import TemperatureSelector from "@/components/Sections/TemperatureSelector";
 import useLocalStateStore from "@/stores/localStateStore";
+import { useStatus } from "@/hooks/useStatus";
 
 export default function HomeScreen() {
     const mode = useLocalStateStore(s => s.mode);
+  const {status } = useStatus();
     return (
         <ThemedView>
             <TemperatureMonitor/>
