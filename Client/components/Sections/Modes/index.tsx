@@ -5,15 +5,18 @@ import { Button, useTheme } from "react-native-paper";
 import useLocalStateStore, {
   LocalStateStoreType,
 } from "@/stores/localStateStore";
+import { useController } from "@/hooks/useController";
 
 export interface ModesProps {}
 
 const Modes: FC<ModesProps> = (props) => {
   const theme = useTheme();
-  const { mode, setMode } = useLocalStateStore((store) => store);
+  const { mode, setMode:_setMode } = useLocalStateStore((store) => store);
   const onModeChange = (newMode: LocalStateStoreType["mode"]) => () => {
-    setMode(newMode);
+    _setMode(newMode);
+    setMode(newMode === 'AUTO' ? 'auto' : "manual");
   };
+  const {setMode} = useController();
   return (
     <View style={{ width:"100%"  }}>
       <Text style={{ width: "100%", textAlign: "center" }}>App Modes</Text>

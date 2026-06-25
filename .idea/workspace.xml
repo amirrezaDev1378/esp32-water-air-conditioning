@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5303fb39-c184-4501-b1b0-2e974cc3edea" name="Changes" comment="feat: fix syntax">
+    <list default="true" id="5303fb39-c184-4501-b1b0-2e974cc3edea" name="Changes" comment="feat: client WIP">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Client/bun.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/Sections/ControlButtons/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/Sections/ControlButtons/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/components/Sections/Modes/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/Sections/Modes/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/Sections/TemperatureMonitor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/Sections/TemperatureMonitor/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +139,7 @@
       <workItem from="1782247964728" duration="5245000" />
       <workItem from="1782312063732" duration="5260000" />
       <workItem from="1782381650766" duration="3432000" />
-      <workItem from="1782385437230" duration="9026000" />
+      <workItem from="1782385437230" duration="9180000" />
     </task>
     <task id="LOCAL-00001" summary="Init : )">
       <option name="closed" value="true" />
@@ -250,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782414660370</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: client WIP">
+      <option name="closed" value="true" />
+      <created>1782417426995</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1782417426995</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,6 +285,7 @@
     <MESSAGE value="feat: tabs" />
     <MESSAGE value="feat: esp client" />
     <MESSAGE value="feat: fix syntax" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: fix syntax" />
+    <MESSAGE value="feat: client WIP" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: client WIP" />
   </component>
 </project>
