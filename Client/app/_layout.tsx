@@ -64,6 +64,38 @@ export default function RootLayout() {
   }
 
   console.log({ error });
+
+  return (
+    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+      <PaperProvider theme={DefaultThemePaper}>
+          <MainRenderer
+            bootstrap={bootstrap}
+            controllerIp={controllerIp}
+            error={error}
+            loading={loading}
+            setTargetIp={setTargetIp}
+            targetIp={targetIp}
+          />
+          <StatusBar style="auto" />
+      </PaperProvider>
+    </ThemeProvider>
+  );
+}
+const MainRenderer = ({
+  loading,
+  error,
+  controllerIp,
+  targetIp,
+  setTargetIp,
+  bootstrap,
+}: {
+  loading: any;
+  error: any;
+  controllerIp: any;
+  targetIp: any;
+  setTargetIp: any;
+  bootstrap: any;
+}) => {
   if (loading) {
     return (
       <View style={styles.center}>
@@ -105,24 +137,17 @@ export default function RootLayout() {
       </View>
     );
   }
-
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <PaperProvider theme={DefaultThemePaper}>
-        <Stack>
-          <Stack.Screen
-            name="(tabs)"
-            options={{
-              headerShown: false,
-            }}
-          />
-        </Stack>
-
-        <StatusBar style="auto" />
-      </PaperProvider>
-    </ThemeProvider>
+    <Stack>
+      <Stack.Screen
+        name="(tabs)"
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack>
   );
-}
+};
 
 const styles = StyleSheet.create({
   center: {

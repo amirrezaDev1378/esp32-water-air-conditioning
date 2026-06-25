@@ -27,7 +27,7 @@ const ControlButtons: FC<ControlButtonsProps> = (props) => {
   const [changeModeConfirm, setChangeModeConfirm] = useState(false);
   const theme = useTheme();
   return (
-    <SafeAreaView
+    <View
       onTouchEnd={(event) => {
         if (mode === "AUTO") {
           setChangeModeConfirm(true);
@@ -41,10 +41,11 @@ const ControlButtons: FC<ControlButtonsProps> = (props) => {
       <View
         style={{
           pointerEvents: mode === "AUTO" ? "none" : undefined,
+          marginTop:12
         }}
       >
         <Text style={{ width: "100%", textAlign: "center" }}>
-          ControlButtons
+          Control Buttons
         </Text>
         <View
           style={{
@@ -53,6 +54,7 @@ const ControlButtons: FC<ControlButtonsProps> = (props) => {
             flexDirection: "row",
             justifyContent: "space-around",
             marginTop: 16,
+            gap:16
           }}
         >
           <Button
@@ -136,7 +138,7 @@ const ControlButtons: FC<ControlButtonsProps> = (props) => {
           </Dialog.Actions>
         </Dialog>
       </Portal>
-    </SafeAreaView>
+    </View>
   );
 };
 

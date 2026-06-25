@@ -1,31 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5303fb39-c184-4501-b1b0-2e974cc3edea" name="Changes" comment="feat: andriod client WIP.">
-      <change afterPath="$PROJECT_DIR$/Client/api/acClient.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/api/discovery.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/api/storage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/hooks/useController.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/hooks/useDiscovery.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/hooks/useStatus.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/hooks/useTemperatureHistory.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/hooks/useTimers.ts" afterDir="false" />
+    <list default="true" id="5303fb39-c184-4501-b1b0-2e974cc3edea" name="Changes" comment="feat: fix syntax">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/(tabs)/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/(tabs)/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/app/(tabs)/settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/(tabs)/settings.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/app/modal.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Client/bun.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/components/Sections/ControlButtons/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/Sections/ControlButtons/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/components/Sections/Modes/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/Sections/Modes/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/components/Sections/TemperatureMonitor/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Client/components/Sections/TemperatureMonitor/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/external-link.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/haptic-tab.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/parallax-scroll-view.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/ui/collapsible.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/ui/icon-symbol.ios.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/components/ui/icon-symbol.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,30 +69,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;bun&quot;,
-    &quot;last_opened_file_path&quot;: &quot;K:/WaterAC/Client/components/Sections&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;bun&quot;,
-    &quot;npm.android.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;K:\\WaterAC\\Client\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;K:\\WaterAC\\Client\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.preferred.runtime.type.id": "bun",
+    "last_opened_file_path": "K:/WaterAC/Client/app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "bun",
+    "npm.android.executor": "Run",
+    "npm.start.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "K:\\WaterAC\\Client\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "K:\\WaterAC\\Client\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="K:\WaterAC\Client\app" />
       <recent name="K:\WaterAC\Client\components\Sections" />
       <recent name="K:\WaterAC\ESP" />
     </key>
@@ -158,7 +142,9 @@
       <workItem from="1782223767636" duration="312000" />
       <workItem from="1782224453042" duration="3891000" />
       <workItem from="1782247964728" duration="5245000" />
-      <workItem from="1782312063732" duration="5038000" />
+      <workItem from="1782312063732" duration="5260000" />
+      <workItem from="1782381650766" duration="3432000" />
+      <workItem from="1782385437230" duration="9026000" />
     </task>
     <task id="LOCAL-00001" summary="Init : )">
       <option name="closed" value="true" />
@@ -184,11 +170,102 @@
       <option name="project" value="LOCAL" />
       <updated>1782251577333</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: andriod client WIP.">
+      <option name="closed" value="true" />
+      <created>1782330857221</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1782330857221</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: better hooks">
+      <option name="closed" value="true" />
+      <created>1782414382696</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1782414382696</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: add more settings">
+      <option name="closed" value="true" />
+      <created>1782414419794</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1782414419794</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: add swr">
+      <option name="closed" value="true" />
+      <created>1782414456735</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1782414456735</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: add controls">
+      <option name="closed" value="true" />
+      <created>1782414493681</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1782414493681</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: add controls">
+      <option name="closed" value="true" />
+      <created>1782414519703</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1782414519703</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: improve ac client">
+      <option name="closed" value="true" />
+      <created>1782414557983</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1782414557983</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: tabs">
+      <option name="closed" value="true" />
+      <created>1782414623119</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1782414623119</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: esp client">
+      <option name="closed" value="true" />
+      <created>1782414644303</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1782414644303</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: fix syntax">
+      <option name="closed" value="true" />
+      <created>1782414660370</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1782414660370</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -196,6 +273,15 @@
     </ignored-roots>
     <MESSAGE value="Init : )" />
     <MESSAGE value="feat: andriod client WIP." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: andriod client WIP." />
+    <MESSAGE value="feat: better hooks" />
+    <MESSAGE value="feat: add more settings" />
+    <MESSAGE value="feat: add swr" />
+    <MESSAGE value="feat: ." />
+    <MESSAGE value="feat: add controls" />
+    <MESSAGE value="feat: improve ac client" />
+    <MESSAGE value="feat: tabs" />
+    <MESSAGE value="feat: esp client" />
+    <MESSAGE value="feat: fix syntax" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: fix syntax" />
   </component>
 </project>
