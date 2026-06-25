@@ -1,32 +1,36 @@
 // useStatus.ts
 
-import { useEffect, useState } from "react";
-import { api } from "@/api/acClient";
+ import { api } from "@/api/acClient";
+import useSWR from "swr";
+import { localStateStore } from "@/stores/localStateStore";
 
 export function useStatus() {
-  const [status, setStatus] = useState<any>();
-  const [loading, setLoading] = useState(true);
 
-  const refresh = async () => {
-    try {
-      const data = await api.getStatus();
-      setStatus(data);
-    } finally {
-      setLoading(false);
-    }
-  };
-  console.log({status});
-  useEffect(() => {
-    refresh();
-
-    const interval = setInterval(refresh, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const { data, error, isLoading, mutate } = useSWR(
+    "/api/v1/status",
+    api.getStatus,
+    {
+      refreshInterval: 1000,
+      onSuccess: (data) => {
+        if (!data) return;
+        localStateStore.setState((prev) => ({
+          ...prev,
+          mode: data.mode === "auto" ? "AUTO" : "MANUAL",
+          controls:{
+            pump:data.pump,
+            fanSpeed1:data.fan1,
+            fanSpeed2:data.fan2,
+          },
+          temperature: data.targetTemp || prev.temperature
+        }));
+      },
+    },
+  );
 
   return {
-    status,
-    loading,
-    refresh,
+    data,
+    error,
+    isLoading,
+    refresh: mutate,
   };
 }

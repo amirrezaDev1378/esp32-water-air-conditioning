@@ -4,7 +4,7 @@ import { api } from "../api/acClient";
 import { useStatus } from "./useStatus";
 
 export function useController() {
-  const { status, loading, refresh } = useStatus();
+  const { data , isLoading, refresh } = useStatus();
 
   const setMode = async (mode: "auto" | "manual") => {
     await api.setMode(mode);
@@ -17,20 +17,19 @@ export function useController() {
   };
 
   const togglePump = async () => {
-    await api.setManual(!status.manualPump, status.manualFanSpeed);
+    await api.setManual(!data?.manualPump, data?.manualFanSpeed! as 1).then(r=>r.json());
 
     await refresh();
   };
 
   const setManualFanSpeed = async (speed: 0 | 1 | 2) => {
-    await api.setManual(status.manualPump, speed);
-
+    const res = await api.setManual(data?.manualPump!, speed).then(r=>r);
     await refresh();
   };
 
   return {
-    status,
-    loading,
+    data,
+    isLoading,
 
     refresh,
 

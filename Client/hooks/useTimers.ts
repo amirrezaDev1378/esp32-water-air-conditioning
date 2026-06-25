@@ -4,7 +4,7 @@ import { api } from "../api/acClient";
 import { useStatus } from "./useStatus";
 
 export function useTimers() {
-  const { status, refresh } = useStatus();
+  const { data, refresh } = useStatus();
 
   const addTimer = async (when: number, action: string, mode?: string) => {
     await api.addTimer(when, action, mode);
@@ -18,7 +18,7 @@ export function useTimers() {
   };
 
   return {
-    timers: status?.activeTimers ?? [],
+    timers: data?.activeTimers ?? [],
 
     addTimer,
     deleteTimer,

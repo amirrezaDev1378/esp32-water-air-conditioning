@@ -1,25 +1,20 @@
 // useTemperatureHistory.ts
 
-import { useEffect, useState } from "react";
 import { api } from "../api/acClient";
+import useSWR from "swr";
 
 export function useTemperatureHistory() {
-  const [history, setHistory] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const load = async () => {
-    setLoading(true);
-    const result = await api.getHistory().finally(() => setLoading(false));
-
-    setHistory(result.points);
-  };
-
-  useEffect(() => {
-    load();
-  }, []);
+  const { mutate, data, isLoading } = useSWR(
+    "/api/v1/history",
+    api.getHistory,
+    {
+      refreshInterval: 6000,
+    },
+  );
 
   return {
-    history,
-    refresh: load,
-    loading,
+    mutate,
+    history: data,
+    isLoading,
   };
 }
