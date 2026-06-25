@@ -2,14 +2,13 @@
 
 import { getIp, getToken } from "./storage";
 
-async function request(method: string, endpoint: string, body?: any) {
+async function request<D = any>(method: string, endpoint: string, body?: any) {
   const ip = await getIp();
+  const token = await getToken();
 
   if (!ip) {
     throw new Error("Controller not configured");
   }
-
-  const token = await getToken();
 
   const response = await fetch(`http://${ip}${endpoint}`, {
     method,
@@ -18,17 +17,60 @@ async function request(method: string, endpoint: string, body?: any) {
       "X-Client-Token": token ?? "",
     },
     body: body ? JSON.stringify(body) : undefined,
+  }).catch(err=>{
+    console.error(err.message);
+    console.log("response error" , err);
+    throw err;
   });
 
   if (!response.ok) {
+    console.log("respoonse not ok");
     throw new Error(`HTTP ${response.status}`);
   }
-
-  return response.json();
+  console.log("RESPONSE OK");
+  return (await response.json()) as D;
 }
 
+export interface StatusResponse {
+  activeTimers: any[];
+  currentTemp: any;
+  fan1: boolean;
+  fan2: boolean;
+  fanSpeed: number;
+  manualFanSpeed: number;
+  manualPump: boolean;
+  mode: string;
+  ok: boolean;
+  pump: boolean;
+  pumpWarmupRemainingSec: number;
+  sensorOk: boolean;
+  systemOn: boolean;
+  targetTemp: number;
+  timeSynced: boolean;
+  uptimeSec: number;
+  utcNow: number;
+  veryHotDelta: number;
+  wifi: {
+    ip: string;
+    ssid: string;
+  };
+}
+
+export interface HistoryResponse {
+  count: number;
+  items: {
+    iso: string;
+    temp: number;
+    ts: number;
+  }[];
+  ok: boolean;
+  sensorOk: boolean;
+}
+
+
+
 export const api = {
-  getStatus: () => request("GET", "/api/v1/status"),
+  getStatus: () => request<StatusResponse>("GET", "/api/v1/status"),
 
   setMode: (mode: "auto" | "manual") =>
     request("POST", "/api/v1/mode", { mode }),
@@ -41,10 +83,12 @@ export const api = {
   setManual: (pump: boolean, fanSpeed: 0 | 1 | 2) =>
     request("POST", "/api/v1/manual", {
       pump,
-      fanSpeed,
+      fan1: fanSpeed === 1,
+      fan2: fanSpeed === 2,
     }),
 
-  getHistory: () => request("GET", "/api/v1/history"),
+  getHistory: () =>
+    request<HistoryResponse>("GET", "/api/v1/history"),
 
   addTimer: (when: number, action: string, mode?: string) =>
     request("POST", "/api/v1/timers", {
