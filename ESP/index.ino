@@ -1,13 +1,11 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
-#include <LittleFS.h>
 #include <ArduinoJson.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
 #include <time.h>
 #include <cstring>
-#include <ESP8266mDNS.h>
-#include <WiFiUdp.h>
+
 // ============================
 // Wi-Fi + security
 // ============================
@@ -15,7 +13,6 @@ const char* WIFI_SSID = "WasdWFFEEssad";
 const char* WIFI_PASS = "624D9AE5asd3@#!#!@";
 const char* CLIENT_TOKEN = "@#%#@$%^&&%^_fH2S_BRCT#@#$%$#%&^$&DFDS";
 
-WiFiUDP udp;
 const uint16_t DISCOVERY_PORT = 4210;
 // ============================
 // Pin map (NodeMCU labels)
@@ -42,7 +39,7 @@ const bool TOUCH_ACTIVE_HIGH = true;
 // Timing
 // ============================
 static const unsigned long TEMP_READ_INTERVAL_MS = 5000;
-static const unsigned long HISTORY_INTERVAL_MS = 60000;
+static const unsigned long HISTORY_INTERVAL_MS = 6000;
 static const unsigned long TOUCH_DEBOUNCE_MS = 300;
 static const unsigned long PUMP_WARMUP_MS = 10UL * 60UL * 1000UL;  // 10 minutes
 static const unsigned long AUTO_LOOP_MS = 1000;
@@ -238,8 +235,8 @@ void refreshOutputs() {
 }
 
 void appendHistory(float temp) {
-  if (!isTimeValid()) return;
-
+  // if (!isTimeValid()) return;
+  Serial.print("Appending history");
   historyBuf[historyHead].ts = time(nullptr);
   historyBuf[historyHead].temp = temp;
   historyHead = (historyHead + 1) % HISTORY_SIZE;
@@ -256,11 +253,13 @@ void readTemperatureIfNeeded() {
   Serial.println(t);
   if (t == DEVICE_DISCONNECTED_C || t < -55.0 || t > 125.0) {
     sensorOk = false;
-    return;
+    // TODO : return to not add history, disabled for development
+    // return;
+  } else {
+    sensorOk = true;
   }
 
   currentTemp = t;
-  sensorOk = true;
 
   if (millis() - lastHistoryMs >= HISTORY_INTERVAL_MS) {
     lastHistoryMs = millis();
@@ -550,6 +549,7 @@ void handleHistory() {
 
   DynamicJsonDocument doc(8192);
   doc["ok"] = true;
+  doc["sensorOk"] = sensorOk;
   doc["count"] = count;
 
   JsonArray arr = doc.createNestedArray("items");
@@ -691,25 +691,72 @@ void setupPins() {
 }
 
 void connectWiFi() {
+
   WiFi.mode(WIFI_STA);
   WiFi.hostname("AC-Controller");
+
+  // Preferred static IP
+  IPAddress local_IP(192, 168, 70, 85);
+  IPAddress gateway(192, 168, 70, 1);
+  IPAddress subnet(255, 255, 255, 0);
+  IPAddress dns1(8, 8, 8, 8);
+
+  Serial.println("Trying static IP...");
+
+  WiFi.config(local_IP, gateway, subnet, dns1);
   WiFi.begin(WIFI_SSID, WIFI_PASS);
 
-  while (WiFi.status() != WL_CONNECTED) {
+  unsigned long start = millis();
+
+  while (WiFi.status() != WL_CONNECTED &&
+         millis() - start < 15000) {
+    delay(250);
     Serial.print(".");
-    delay(500);
+  }
+
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println();
+    Serial.println("Connected using static IP");
+
+    Serial.print("IP: ");
+    Serial.println(WiFi.localIP());
+
+    return;
   }
 
   Serial.println();
-  Serial.println("Connected!");
+  Serial.println("Static IP failed, trying DHCP...");
 
-  Serial.print("IP: ");
-  Serial.println(WiFi.localIP());
+  WiFi.disconnect(true);
 
-  if (MDNS.begin("ac-controller")) {
-    Serial.println("mDNS started");
+  delay(1000);
+
+  // Return to DHCP
+  WiFi.config(0U, 0U, 0U);
+
+  WiFi.begin(WIFI_SSID, WIFI_PASS);
+
+  start = millis();
+
+  while (WiFi.status() != WL_CONNECTED &&
+         millis() - start < 15000) {
+    delay(250);
+    Serial.print(".");
+  }
+
+  if (WiFi.status() == WL_CONNECTED) {
+
+    Serial.println();
+    Serial.println("Connected using DHCP");
+
+    Serial.print("IP: ");
+    Serial.println(WiFi.localIP());
+
   } else {
-    Serial.println("mDNS failed");
+
+    Serial.println();
+    Serial.println("WiFi connection failed");
+
   }
 }
 
@@ -743,36 +790,6 @@ void setupRoutes() {
   server.onNotFound(handleNotFound);
 }
 
-void handleDiscovery() {
-  int packetSize = udp.parsePacket();
-
-  if (!packetSize)
-    return;
-
-  char packet[64];
-  int len = udp.read(packet, sizeof(packet) - 1);
-
-  if (len <= 0)
-    return;
-
-  packet[len] = 0;
-
-  if (strcmp(packet, "DISCOVER_AC_CONTROLLER") == 0) {
-    String response =
-      "{\"name\":\"AC Controller\","
-      "\"ip\":\""
-      + WiFi.localIP().toString() + "\",\"port\":80}";
-
-    udp.beginPacket(
-      udp.remoteIP(),
-      udp.remotePort());
-
-    udp.write(response.c_str());
-    udp.endPacket();
-
-    Serial.println("Discovery response sent");
-  }
-}
 
 void setup() {
   Serial.begin(115200);
@@ -790,7 +807,6 @@ void setup() {
   outputsOff();
   pumpOffMs = millis();
 
-  LittleFS.begin();
 
   ds18b20.begin();
 
@@ -803,10 +819,7 @@ void setup() {
 
   setupRoutes();
   server.begin();
-  udp.begin(DISCOVERY_PORT);
 
-  Serial.print("UDP listening on ");
-  Serial.println(DISCOVERY_PORT);
   Serial.println();
   Serial.println("AC controller ready");
   Serial.println(WiFi.localIP());
@@ -824,5 +837,4 @@ void loop() {
     refreshOutputs();
   }
 
-  handleDiscovery();
 }
