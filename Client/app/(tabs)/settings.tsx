@@ -3,8 +3,19 @@ import { ThemedText } from "@/components/ui/themed-text";
 import { ThemedView } from "@/components/ui/themed-view";
 import { Fonts } from "@/constants/theme";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useEffect, useState } from "react";
+import { getIp, getToken, saveIp, saveToken } from "@/api/storage";
+import { useRouter } from "expo-router";
 
 export default function TabTwoScreen() {
+  const [clientSecret, setClientSecret] = useState("");
+  const [deviceIP, setDeviceIP] = useState("");
+  const { navigate } = useRouter();
+
+  useEffect(()=>{
+    getToken().then(r=>setClientSecret(r || ""))
+    getIp().then(r=>setDeviceIP(r || ""))
+  },[])
   return (
     <SafeAreaView>
       <ThemedView style={styles.titleContainer}>
@@ -20,12 +31,34 @@ export default function TabTwoScreen() {
       <ThemedText>Your client settings to use the unit.</ThemedText>
 
       <ThemedText>Client Secret:</ThemedText>
-      <TextInput placeholder={"Client Secret"} />
+      <TextInput
+        onChangeText={setClientSecret}
+        value={clientSecret}
+        placeholder={"Client Secret"}
+      />
+
+      <ThemedText>Device IP:</ThemedText>
+      <TextInput
+        onChangeText={setDeviceIP}
+        value={deviceIP}
+        placeholder={"Device IP"}
+      />
 
       <ThemedText>Admin Secret:</ThemedText>
       <TextInput placeholder={"Admin Secret"} />
 
-      <Button title={"Save & Reload."} />
+      <Button
+        onPress={async () => {
+          if (clientSecret) {
+            await saveToken(clientSecret);
+          }
+          if (deviceIP) {
+            await saveIp(deviceIP);
+          }
+            navigate("/(tabs)");
+        }}
+        title={"Save & Reload."}
+      />
     </SafeAreaView>
   );
 }
