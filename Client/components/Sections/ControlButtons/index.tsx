@@ -4,11 +4,26 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Dialog, Portal, useTheme } from "react-native-paper";
 import MaterialDesignIcons from "@react-native-vector-icons/material-design-icons";
 import useLocalStateStore from "@/stores/localStateStore";
+import { useController } from "@/hooks/useController";
 
 export interface ControlButtonsProps {}
 
 const ControlButtons: FC<ControlButtonsProps> = (props) => {
-  const { controls, setControl, mode , setMode } = useLocalStateStore((s) => s);
+  const {
+    controls,
+    setControl: setControlState,
+    mode,
+    setMode: setModeState,
+  } = useLocalStateStore((s) => s);
+  const {
+    togglePump,
+    setMode,
+    refresh,
+    data,
+    setManualFanSpeed,
+    setTargetTemp,
+    isLoading,
+  } = useController();
   const [changeModeConfirm, setChangeModeConfirm] = useState(false);
   const theme = useTheme();
   return (
@@ -41,7 +56,11 @@ const ControlButtons: FC<ControlButtonsProps> = (props) => {
           }}
         >
           <Button
-            onPress={() => setControl("pump", !controls.pump)}
+            onPress={() => {
+              togglePump().then((r) => {
+                setControlState("pump", !controls.pump);
+              });
+            }}
             buttonColor={
               controls.pump ? theme.colors.primary : theme.colors.surfaceVariant
             }
@@ -50,7 +69,12 @@ const ControlButtons: FC<ControlButtonsProps> = (props) => {
             <MaterialDesignIcons size={32} name={"pump"} />
           </Button>
           <Button
-            onPress={() => setControl("fanSpeed1", !controls.fanSpeed1)}
+            onPress={() => {
+              console.log("set fan speed", controls.fanSpeed1 ? 0 : 1);
+              setManualFanSpeed(controls.fanSpeed1 ? 0 : 1).then((r) => {
+                setControlState("fanSpeed1", !controls.fanSpeed1);
+              });
+            }}
             buttonColor={
               controls.fanSpeed1
                 ? theme.colors.primary
@@ -61,7 +85,11 @@ const ControlButtons: FC<ControlButtonsProps> = (props) => {
             <MaterialDesignIcons size={32} name={"fan"} />
           </Button>
           <Button
-            onPress={() => setControl("fanSpeed2", !controls.fanSpeed2)}
+            onPress={() => {
+              setManualFanSpeed(controls.fanSpeed2 ? 0 : 2).then((r) => {
+                setControlState("fanSpeed2", !controls.fanSpeed2);
+              });
+            }}
             buttonColor={
               controls.fanSpeed2
                 ? theme.colors.primary
@@ -85,7 +113,7 @@ const ControlButtons: FC<ControlButtonsProps> = (props) => {
           </Dialog.Content>
           <Dialog.Actions>
             <Button
-              style={{paddingInline:12}}
+              style={{ paddingInline: 12 }}
               buttonColor={theme.colors.secondary}
               mode={"contained"}
               onPress={() => setChangeModeConfirm(false)}
@@ -93,12 +121,14 @@ const ControlButtons: FC<ControlButtonsProps> = (props) => {
               No, keep auto.
             </Button>
             <Button
-              style={{paddingInline:16}}
+              style={{ paddingInline: 16 }}
               buttonColor={theme.colors.primary}
               mode={"contained"}
               onPress={() => {
-                setChangeModeConfirm(false);
-                setMode("MANUAL");
+                setModeState("MANUAL");
+                setMode("manual").then((r) => {
+                  setChangeModeConfirm(false);
+                });
               }}
             >
               Yes
